@@ -1,10 +1,10 @@
 apiVersion: integration/v1
 kind: Trigger
-name: template
+name: incident-triggered
 version: 1
-summary: Step template
+summary: PagerDuty incident triggered
 description: |
-  This is a template for a simple step.
+  This trigger fires when a PagerDuty incident is triggered for the first time.
 
 responders:
 - webhook
