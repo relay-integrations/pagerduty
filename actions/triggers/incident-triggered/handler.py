@@ -23,24 +23,24 @@ async def handler():
 
         relay.events.emit({
             'id': incident['id'],
-            'incident_number': incident['incident_number'],
+            'incidentNumber': incident['incident_number'],
             'title': incident['title'],
             'urgency': incident['urgency'],
-            'triggered_at': incident['created_at'],
+            'triggeredAt': incident['created_at'],
             'assignments': [{
-                'assigned_at': assignment['at'],
-                'assignee_id': assignment['assignee']['id'],
-                'assignee_name': assignment['assignee']['summary'],
-                'assignee_api_url': assignment['assignee']['self'],
-                'assignee_app_url': assignment['assignee']['html_url'],
+                'assignedAt': assignment['at'],
+                'assigneeID': assignment['assignee']['id'],
+                'assigneeName': assignment['assignee']['summary'],
+                'assigneeAPIURL': assignment['assignee']['self'],
+                'assigneeAppURL': assignment['assignee']['html_url'],
             } for assignment in incident['assignments']],
-            'api_url': incident['self'],
-            'app_url': incident['html_url'],
-            'service_id': incident['service']['id'],
-            'service_name': incident['service']['name'],
-            'service_description': incident['service']['description'],
-            'service_api_url': incident['service']['self'],
-            'service_app_url': incident['service']['html_url'],
+            'apiURL': incident['self'],
+            'appURL': incident['html_url'],
+            'service': incident['service']['id'],
+            'serviceName': incident['service']['name'],
+            'serviceDescription': incident['service']['description'],
+            'serviceAPIURL': incident['service']['self'],
+            'serviceAppURL': incident['service']['html_url'],
         })
 
     return {'message': 'success'}, 202, {}
