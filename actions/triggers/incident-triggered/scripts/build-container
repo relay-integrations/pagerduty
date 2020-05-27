@@ -38,9 +38,9 @@ done
 shift $(( OPTIND - 1 ))
 
 
-$DOCKER $DOCKER_ARGS build $DOCKER_BUILD_ARGS --tag sdk.nebula.localhost/intermediate/90c6f5adf394/incident-triggered --file Dockerfile .
+$DOCKER $DOCKER_ARGS build $DOCKER_BUILD_ARGS --tag sdk.nebula.localhost/intermediate/0b7ac0600e7a/pagerduty-trigger-incident-triggered --file Dockerfile .
 
 for TAG in ${TAGS[@]+"${TAGS[@]}"}; do
-  $DOCKER $DOCKER_ARGS tag sdk.nebula.localhost/intermediate/90c6f5adf394/incident-triggered "sdk.nebula.localhost/generated/incident-triggered:${TAG}" && \
-    printf "# Tagged %s:%s\n" sdk.nebula.localhost/generated/incident-triggered "${TAG}"
+  $DOCKER $DOCKER_ARGS tag sdk.nebula.localhost/intermediate/0b7ac0600e7a/pagerduty-trigger-incident-triggered "relaysh/pagerduty-trigger-incident-triggered:${TAG}" && \
+    printf "# Tagged %s:%s\n" relaysh/pagerduty-trigger-incident-triggered "${TAG}"
 done
