@@ -1,0 +1,18 @@
+apiVersion: integration/v1
+kind: Trigger
+name: incident-triggered
+version: 1
+summary: PagerDuty incident triggered
+description: |
+  This trigger fires when a PagerDuty incident is triggered for the first time.
+
+responders:
+- webhook
+
+schemas:
+  spec:
+    $schema: http://json-schema.org/draft-07/schema#
+
+build:
+  apiVersion: build/v1
+  kind: Docker
