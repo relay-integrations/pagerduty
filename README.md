@@ -10,7 +10,7 @@ The following are supported actions:
 
 |   Type    |  Name                                 | Description                             | 
 |-----------|---------------------------------------|-----------------------------------------|
-| Trigger      | [pagerduty-trigger-incident-triggered](/actions/triggers/incident-triggered)  | When a new incident is created in PagerDuty | 
+| Trigger      | [pagerduty-trigger-incident-triggered](/triggers/incident-triggered)  | When a new incident is created in PagerDuty | 
 
 ## Contributing
 
