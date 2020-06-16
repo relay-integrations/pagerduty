@@ -5,7 +5,7 @@ channel: alpha
 version: v20200522
 summary: Relay integration for PagerDuty
 license: Apache-2.0
-homepage: https://github.com/relay-integrations/pagerduty
+homepage: https://github.com/relay-integrations/relay-pagerduty
 
 description: |
   This integration provides access to PagerDuty, a real-time operations and
