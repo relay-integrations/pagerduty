@@ -1,4 +1,4 @@
-from nebula_sdk import Interface, WebhookServer
+from relay_sdk import Interface, WebhookServer
 from quart import Quart, request, jsonify, make_response
 
 import logging
@@ -41,7 +41,7 @@ async def handler():
             'serviceDescription': incident['service']['description'],
             'serviceAPIURL': incident['service']['self'],
             'serviceAppURL': incident['service']['html_url'],
-        })
+        }, key=message['id'])
 
     return {'message': 'success'}, 202, {}
 
