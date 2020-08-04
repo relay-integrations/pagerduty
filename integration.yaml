@@ -17,5 +17,5 @@ owner:
   url: https://puppet.com
 
 tags:
-- rto
-- incident response
+  - incident response
+  - rto
