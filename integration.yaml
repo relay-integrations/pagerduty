@@ -3,7 +3,7 @@ kind: Integration
 name: pagerduty
 channel: alpha
 version: v20200522
-summary: Relay integration for PagerDuty
+summary: PagerDuty
 license: Apache-2.0
 homepage: https://github.com/relay-integrations/relay-pagerduty
 
