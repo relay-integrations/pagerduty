@@ -8,8 +8,7 @@ license: Apache-2.0
 homepage: https://github.com/relay-integrations/relay-pagerduty
 
 description: |
-  This integration provides access to PagerDuty, a real-time operations and
-  incident response platform.
+  PagerDuty is an incident management platform that provides reliable notifications, automatic escalations, on-call scheduling, and other functionality to help teams detect and fix infrastructure problems quickly.
 
 owner:
   name: Puppet, Inc.
