@@ -1,0 +1,15 @@
+apiVersion: integration/v1
+kind: Step
+name: template
+version: 1
+summary: PagerDuty Event Send Step
+
+description: |
+  This step sends events to PagerDuty
+
+build:
+  apiVersion: build/v1
+  kind: Docker
+
+publish:
+  repository: relaysh/pagerduty-step-event-send
