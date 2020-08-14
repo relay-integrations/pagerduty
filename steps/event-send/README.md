@@ -22,10 +22,11 @@ parameters:
   hostname:
     description: "The hostname of the affected host"
 
-step:
+steps:
 - name: pagerduty-event
   image: relaysh/pagerduty-step-event-send
   spec:
+    connection: !Connection { type: pagerduty, name: my-project }
     type: trigger
     summary: !Fn.concat
     - "Host "

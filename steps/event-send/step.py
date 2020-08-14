@@ -12,7 +12,7 @@ eventType = relay.get(D.type)
 summary   = relay.get(D.summary)
 source    = relay.get(D.source)
 severity  = relay.get(D.severity)
-dedupKey  = relay.get(D.dedup_key)
+dedup_key  = relay.get(D.dedup_key)
 
 # All calls require type
 # Trigger calls require summary/source/severity
@@ -27,21 +27,15 @@ elif eventType == "trigger":
        sys.exit("A source is required for event type trigger, but none was set")
     if severity == None:
        sys.exit("A severity is required for event type trigger, but none was set")
-    kwargs = dict(
-        summary = summary,
-        source = source,
-        severity = severity,
-        dedup_key = dedupKey,
-    )
-    response = session.trigger(**{k: v for k, v in kwargs.items() if v is not None})
+    response = session.trigger(summary, source, dedup_key, severity)
 elif eventType == "acknowledge":
-    if dedupKey == None:
+    if dedup_key == None:
        sys.exit("A dedup_key is required for event type acknowledge, but none was set")
-    response = session.acknowledge(dedupKey)
+    response = session.acknowledge(dedup_key)
 elif eventType == "resolve":
-    if dedupKey == None:
+    if dedup_key == None:
        sys.exit("A dedup_key is required for event type resolve, but none was set")
-    response = session.resolve(dedupKey)
+    response = session.resolve(dedup_key)
 
 relay.outputs.set("dedup_key", "This will be the value of the dedup_key recieved from PagerDuty")
 
