@@ -12,7 +12,7 @@ This step expects the following fields in the `spec` section of a workflow step 
 | `type`       | String           | One of `trigger`, `acknowledge`, or `resolve`                                                                                                                                   | None    | Yes                                |
 | `summary`    | String           | The [summary](https://developer.pagerduty.com/docs/events-api-v2/overview/#pagerduty-common-event-format-pd-cef) of the event triggered                                         | None    | For trigger type events            |
 | `source`     | String           | The [source](https://developer.pagerduty.com/docs/events-api-v2/overview/#pagerduty-common-event-format-pd-cef) of the event                                                    | None    | For trigger type events            |
-| `severity`   | String           | The [severity](https://developer.pagerduty.com/docs/events-api-v2/overview/#pagerduty-common-event-format-pd-cef) of the event. One of: {`Info`, `Warning`, `Error`, `Critical` | None    | No                                 |
+| `severity`   | String           | The [severity](https://developer.pagerduty.com/docs/events-api-v2/overview/#pagerduty-common-event-format-pd-cef) of the event. One of: `info`, `warning`, `error`, `critical` | None    | No                                 |
 | `dedup_key`  | String           | The [deduplication key](https://support.pagerduty.com/docs/event-management) to group all events relating to an incident                                                        | None    | For acknowledge and resolve events |
 
 ## Usage
@@ -33,6 +33,6 @@ steps:
     - !Parameter hostname
     - " is down"
     source: !Parameter hostname
-    severity: Critical
+    severity: critical
     dedup_key: !Fn.concat ["host-down-", !Parameter hostname]
 ```
