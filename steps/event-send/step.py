@@ -8,19 +8,20 @@ relay = Interface()
 token = relay.get(D.connection.accessToken)
 session = EventsAPISession(token)
 
-eventType = relay.get(D.type)
-summary   = relay.get(D.summary)
-source    = relay.get(D.source)
-severity  = relay.get(D.severity)
-dedup_key  = relay.get(D.dedup_key)
-
 # All calls require type
 # Trigger calls require summary/source/severity
 # Trigger calls may take dedup_key
-# Acknowledge and Resove calls require dedup_key
+# Acknowledge and Resove calls require dedup_key, but I'm going to make it requried on all
+# because I can't figure out how to make it optional with the python SDK yet
+eventType = relay.get(D.type)
+dedup_key = relay.get(D.dedup_key)
+
 if eventType == None:
     sys.exit("A type is required for sending events, but none was set")
 elif eventType == "trigger":
+    summary = relay.get(D.summary)
+    source = relay.get(D.source)
+    severity = relay.get(D.severity)
     if summary == None:
        sys.exit("A summary is required for event type trigger, but none was set")
     if source == None:
