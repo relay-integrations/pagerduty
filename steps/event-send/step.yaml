@@ -1,6 +1,6 @@
 apiVersion: integration/v1
 kind: Step
-name: pagerduty-step-event-send
+name: event-send
 version: 1
 summary: PagerDuty Event Send Step
 

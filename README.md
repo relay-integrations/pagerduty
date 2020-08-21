@@ -6,12 +6,12 @@ operations.
 
 ## Actions
 
-The following are supported actions: 
+The following are supported actions:
 
 | Type    | Name                                                                                 | Description                                                                |
 |---------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
-| Trigger | [pagerduty-trigger-incident-triggered](/triggers/pagerduty-trigger-incident-trigger) | When a new incident is created in PagerDuty                                |
-| Step    | [pagerduty-step-event-send](/steps/event-send)                                       | Send an event to PagerDuty to trigger, acknowledge, or resolve an incident |
+| Trigger | [incident-triggered](/triggers/incident-trigger) | When a new incident is created in PagerDuty                                |
+| Step    | [event-send](/steps/event-send)                                       | Send an event to PagerDuty to trigger, acknowledge, or resolve an incident |
 
 ## Contributing
 

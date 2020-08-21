@@ -1,29 +1,29 @@
-# pagerduty-trigger-incident-triggered
+# incident-triggered
 
-This [PagerDuty](https://pagerduty.com) trigger fires when a new incident is created. 
+This [PagerDuty](https://pagerduty.com) trigger fires when a new incident is created.
 
-## Data Emitted 
+## Data Emitted
 
-| Name | Child data | Data type | Description | 
+| Name | Child data | Data type | Description |
 |------|------------|-----------|-------------|
-| `id` || string | id of the incident | 
-| `incidentNumber` || string | incident number | 
-| `title`  || string | incident title | 
-| `urgency` || string |  incident urgency | 
-| `triggeredAt` || datetime | time incident was triggered | 
+| `id` || string | id of the incident |
+| `incidentNumber` || string | incident number |
+| `title`  || string | incident title |
+| `urgency` || string |  incident urgency |
+| `triggeredAt` || datetime | time incident was triggered |
 | `assignments` || mapping | mapping of incident assignments |
-|| `assignedAt` | datetime | time incident was assigned | 
+|| `assignedAt` | datetime | time incident was assigned |
 || `assigneeID` | string | assignee id |
 || `assigneeName` | string | assignee name |
 || `assigneeAPIRUL` | url | assignee API URL |
 || `assigneeAppURL` | url | assignee app URL |
-| `apiURL` || url | api URL | 
-| `appURL` || url | app URL | 
+| `apiURL` || url | api URL |
+| `appURL` || url | app URL |
 | `service` || string | impacted service id |
-| `serviceName` || string | impacted service name | 
-| `serviceDescription` || string | impacted service description | 
-| `serviceAPIURL` || url | impacted service API URL | 
-| `serviceAppURL` || url | impacted service APP URL | 
+| `serviceName` || string | impacted service name |
+| `serviceDescription` || string | impacted service description |
+| `serviceAPIURL` || url | impacted service API URL |
+| `serviceAppURL` || url | impacted service APP URL |
 
 ## Example Trigger
 
@@ -37,7 +37,7 @@ parameters:
     default: ""
   serviceName:
     default: ""
-  
+
 triggers:
 - name: pagerduty-incident
   source:
@@ -51,7 +51,7 @@ triggers:
       serviceName: !Data serviceName
 ```
 
-## Example Raw Data 
+## Example Raw Data
 
 ```
 {
