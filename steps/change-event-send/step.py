@@ -64,7 +64,7 @@ class ChangeEventsAPISession(PDSession):
                 ), response=r
             )
         response_body = try_decoding(response)
-        return response_body["id"]
+        return response_body.get("id", None)
 
     def submit(self, summary, source, custom_details=None, links=None):
         """
