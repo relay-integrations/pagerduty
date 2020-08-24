@@ -1,0 +1,15 @@
+apiVersion: integration/v1
+kind: Step
+name: change-event-send
+version: 1
+summary: PagerDuty Change Event Send Step
+
+description: |
+  This step sends change events to PagerDuty
+
+build:
+  apiVersion: build/v1
+  kind: Docker
+
+publish:
+  repository: relaysh/pagerduty-step-change-event-send

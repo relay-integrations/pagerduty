@@ -8,10 +8,11 @@ operations.
 
 The following are supported actions:
 
-| Type    | Name                                                                                 | Description                                                                |
-|---------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| Type    | Name                                             | Description                                                                |
+|---------|--------------------------------------------------|----------------------------------------------------------------------------|
 | Trigger | [incident-triggered](/triggers/incident-trigger) | When a new incident is created in PagerDuty                                |
-| Step    | [event-send](/steps/event-send)                                       | Send an event to PagerDuty to trigger, acknowledge, or resolve an incident |
+| Step    | [event-send](/steps/event-send)                  | Send an event to PagerDuty to trigger, acknowledge, or resolve an incident |
+| Step    | [change-event-send](/steps/change-event-send)    | Send a change event to PagerDuty                                           |
 
 ## Contributing
 
