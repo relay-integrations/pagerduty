@@ -1,6 +1,6 @@
 # change-event-send
 
-This step can be used to send change events to [PagerDuty](http://pagerduty.com/). Change events are the means by which incidents are [triggered](https://support.pagerduty.com/docs/incidents), acknowledged, or resolved.
+This step can be used to send change events to [PagerDuty](http://pagerduty.com/). Change events are the means by which updates and changes can be tracked.
 
 ## Specification
 
