@@ -7,6 +7,11 @@ summary: PagerDuty Change Event Send Step
 description: |
   This step sends change events to PagerDuty
 
+schemas:
+  spec:
+    source: file
+    file: spec.schema.json
+
 build:
   apiVersion: build/v1
   kind: Docker

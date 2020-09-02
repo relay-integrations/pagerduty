@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "properties": {
+    "connection": {
+      "type": "object",
+      "x-relay-connection-type": "pagerduty",
+      "description": "A Relay PagerDuty connection to use",
+      "properties": {
+        "accessToken": {
+          "type": "string",
+          "description": "The PagerDuty API access token to use"
+        }
+      },
+      "required": [
+        "accessToken"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "description": "A short description of the change"
+    },
+    "source": {
+      "type": "string",
+      "description": "The source of the change"
+    }
+  },
+  "required": [
+    "connection",
+    "summary"
+  ],
+  "additionalProperties": false
+}
