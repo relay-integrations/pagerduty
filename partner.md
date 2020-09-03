@@ -42,8 +42,9 @@ There are two kinds of Relay integrations that can be added to a PagerDuty Servi
 ![](media/integration-key.png)
 
 ### Integrating Relay Triggers With a PagerDuty Service
-1. From the **Configuration** menu, select **Services**.
-3. Using your Relay Workflow webhook url, follow the official [PagerDuty documentation for adding a webhook](https://support.pagerduty.com/docs/webhooks)
+1. Follow the steps in the [Adding a Relay Connection for PagerDuty Triggers](#adding-a-relay-connection-for-pagerduty-triggers) section to obtain a Relay workflow trigger webhook url, then continue in PagerDuty.
+2. From the **Configuration** menu, select **Services**.
+3. Using your Relay workflow webhook url, follow the official [PagerDuty documentation for adding a webhook](https://support.pagerduty.com/docs/webhooks)
 
 ## In Relay
 
@@ -54,6 +55,14 @@ Connections allow you to link Relay steps to other services you use, suchs as Pa
 2. Fill in an appropriate connection name in the Name field, such as `shopping-cart-monitoring`
 3. Paste the PagerDuty integration key obtained from the previous section [Integrating Relay Steps With a PagerDuty Service](#integrating-relay-steps-with-a-pagerduty-service) and click Save.
 ![](media/add-connection.png)
+
+### Adding a Relay Connection for PagerDuty Triggers
+Triggers allow you to start Relay workflow runs based on events received from PagerDuty.
+
+1. Navigate to a workflow to add a PagerDuty trigger to.
+2. In the `triggers` section of the workflow, add a `source` map with `type: webhook` and `image: relaysh/pagerduty-trigger-incident-triggered:latest`. Also add a `bindings` map exposing the PagerDuty fields that you would like to pass to the workflow. Details on configuring Relay webhooks is available in the [Relay documentation](https://relay.sh/docs/using-workflows/using-triggers/#webhook-triggers) and documentation on the PagerDuty trigger specifically is available in the [Relay PagerDuty Trigger documentation](https://github.com/relay-integrations/relay-pagerduty/tree/master/triggers/incident-triggered#example-trigger).
+3. Save the workflow and open the workflow sidebar. Copy the webhook trigger URL and keep in a safe place. You will use when configuring PagerDuty as continued in the [Integrating Relay Triggers With a PagerDuty Service](#integrating-relay-triggers-with-a-pagerduty-service) section of this guide.
+![](media/copy-trigger-url.png)
 
 # How to Uninstall
 A PagerDuty user can remove a Relay integration from a PagerDuty Service via the PagerDuty Service's Integrations tab.
