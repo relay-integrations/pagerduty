@@ -8,9 +8,9 @@
 
 # How it Works
 * Incidents from PagerDuty can trigger Relay workflow runs to automatically address infrastructure needs and coordinate staff responses using the catalog of Relay providers. Whether restarting ec2 instances, logging incident details in Jira, setting up war rooms in Slack, or gathering status information from Kubernetes, Relay has you covered.
-* Relay workflow failures can be submitted to PagerDuty to trigger incidents as well, reducing response time to failed deployments or upgrades.
-* PagerDuty incidents may be acknowledged and resolved using the Relay PagerDuty integration as part of a workflow run.
-* Similarly, PagerDuty change events detailing actions taken to address the incident may also be logged in PagerDuty by Relay workflow runs.
+* Relay can submit workflow failures to PagerDuty to trigger incidents as well, reducing response time to failed deployments or upgrades.
+* The Relay PagerDuty integration can acknowledge and resolve PagerDuty incidents as part of a workflow run.
+* Similarly, Relay workflow runs can log PagerDuty change events detailing actions taken to address an incident.
  
 
 # Requirements
