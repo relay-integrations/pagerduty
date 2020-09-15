@@ -7,11 +7,6 @@ summary: PagerDuty User Get By ID Step
 description: |
   This step gets user details from PagerDuty by their PagerDuty ID
 
-schemas:
-  spec:
-    source: file
-    file: spec.schema.json
-
 build:
   apiVersion: build/v1
   kind: Docker
