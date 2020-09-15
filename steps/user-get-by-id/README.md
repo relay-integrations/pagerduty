@@ -13,14 +13,14 @@ This step expects the following fields in the `spec` section of a workflow step 
 
 ## Outputs
 
-| Name    | Data type | Description      |
-|---------|-----------|------------------|
-| `response` | Object    | not correct TODO |
-
-example output value:
-```json
-{"user":{"name":"Hunter Haugen","email":"hunter@puppet.com", ... }}
-```
+| Name          | Data type | Description                                               |
+|---------------|-----------|-----------------------------------------------------------|
+| `name`        | String    | The name of the user                                      |
+| `email`       | String    | The user's email address                                  |
+| `description` | String    | The user's bio                                            |
+| `timeZone`    | String    | The user's preferred time zone                            |
+| `apiURL`      | String    | The URL to the user record in the PagerDuty API           |
+| `appURL`      | String    | The URL to the user record in the PagerDuty web interface |
 
 
 ## Usage
@@ -30,4 +30,6 @@ steps:
 - name: pagerduty-user
   image: relaysh/pagerduty-step-user-get-by-id
   spec:
+    connection: !Connection [pagerduty, relay-pagerduty-service-integration]
+    userID: !Parameter userID
 ```
