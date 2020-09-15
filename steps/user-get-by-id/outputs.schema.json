@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the user"
+    },
+    "email": {
+      "type": "string",
+      "description": "The user's email address",
+      "format": "email"
+    },
+    "description": {
+      "type": "string",
+      "description": "The user's bio"
+    },
+    "timeZone": {
+      "type": "string",
+      "description": "The user's preferred time zone"
+    },
+    "apiURL": {
+      "type": "string",
+      "description": "The URL to the user record in the PagerDuty API",
+      "format": "url"
+    },
+    "appURL": {
+      "type": "string",
+      "description": "The URL to the user record in the PagerDuty web interface",
+      "format": "url"
+    }
+  },
+  "required": [
+    "name",
+    "email"
+  ]
+}

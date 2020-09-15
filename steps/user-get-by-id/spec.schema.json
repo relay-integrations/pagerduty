@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "connection": {
+      "type": "object",
+      "x-relay-connection-type": "pagerduty",
+      "description": "A Relay PagerDuty connection to use",
+      "properties": {
+        "accessToken": {
+          "type": "string",
+          "description": "The PagerDuty API access token to use"
+        }
+      },
+      "required": [
+        "accessToken"
+      ]
+    },
+    "userID": {
+      "type": "string",
+      "description": "A PagerDuty user ID"
+    }
+  },
+  "required": [
+    "userID"
+  ],
+  "additionalProperties": false
+}
