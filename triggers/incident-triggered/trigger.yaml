@@ -15,6 +15,32 @@ schemas:
     source: file
     file: event.schema.json
 
+examples:
+- summary: Run a workflow when a PagerDuty incident is triggered
+  content:
+    apiVersion: v1
+    kind: workflow
+    parameters:
+      id:
+        description: The incident's unique ID
+      title:
+        description: A brief summary of the incident
+      urgency:
+        description: The incident's urgency, either high or low
+      serviceName:
+        description: The name of the affected service
+    triggers:
+    - name: pagerduty-incident
+      source:
+        type: webhook
+        image: relaysh/pagerduty-trigger-incident-triggered
+      binding:
+        parameters:
+          id: !Data id
+          title: !Data title
+          urgency: !Data urgency
+          serviceName: !Data serviceName
+
 build:
   apiVersion: build/v1
   kind: Docker
