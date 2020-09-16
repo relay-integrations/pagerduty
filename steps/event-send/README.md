@@ -17,9 +17,9 @@ This step expects the following fields in the `spec` section of a workflow step 
 
 ## Outputs
 
-| Name         | Data type | Description                                     |
-|--------------|-----------|-------------------------------------------------|
-| `dedupe_key` | String    | The de duplication key for the referenced event |
+| Name        | Data type | Description                                     |
+|-------------|-----------|-------------------------------------------------|
+| `dedup_key` | String    | The de-duplication key for the referenced event |
 
 ## Usage
 

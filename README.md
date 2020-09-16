@@ -4,15 +4,20 @@ This integration provides interoperability with
 [PagerDuty](https://www.pagerduty.com/) for incident response and real-time
 operations.
 
-## Actions
+## Steps
 
-The following are supported actions:
+| Name                                               | Description                                                                |
+|----------------------------------------------------|----------------------------------------------------------------------------|
+| [event-send](/steps/event-send)                    | Send an event to PagerDuty to trigger, acknowledge, or resolve an incident |
+| [change-event-send](/steps/change-event-send)      | Send a change event to PagerDuty                                           |
+| [user-get-by-id](/steps/user-get-by-id)            | This step gets user details from PagerDuty by their PagerDuty ID           |
 
-| Type    | Name                                               | Description                                                                |
-|---------|----------------------------------------------------|----------------------------------------------------------------------------|
-| Trigger | [incident-triggered](/triggers/incident-triggered) | When a new incident is created in PagerDuty                                |
-| Step    | [event-send](/steps/event-send)                    | Send an event to PagerDuty to trigger, acknowledge, or resolve an incident |
-| Step    | [change-event-send](/steps/change-event-send)      | Send a change event to PagerDuty                                           |
+
+## Triggers
+
+| Name                                               | Description                                                                |
+|----------------------------------------------------|----------------------------------------------------------------------------|
+| [incident-triggered](/triggers/incident-triggered) | When a new incident is created in PagerDuty                                |
 
 ## Contributing
 
