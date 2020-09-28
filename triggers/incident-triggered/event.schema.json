@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The incident's unique identifier"
+    },
+    "incidentNumber": {
+      "type": "integer",
+      "description": "The account-unique incident number"
+    },
+    "title": {
+      "type": "string",
+      "description": "A succinct description of the incident"
+    },
+    "urgency": {
+      "type": "string",
+      "description": "The incident's urgency",
+      "enum": ["high", "low"]
+    },
+    "triggeredAt": {
+      "type": "string",
+      "description": "When the incident was first triggered",
+      "format": "date-time"
+    },
+    "assignments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "assignedAt": {
+            "type": "string",
+            "description": "When this assignee was assigned to the incident",
+            "format": "date-time"
+          },
+          "assigneeID": {
+            "type": "string",
+            "description": "The assignee's unique identifier"
+          },
+          "assigneeName": {
+            "type": "string",
+            "description": "The assignee's full name"
+          },
+          "assigneeAPIURL": {
+            "type": "string",
+            "description": "The URL to the assignee in the PagerDuty API",
+            "format": "url"
+          },
+          "assigneeAppURL": {
+            "type": "string",
+            "description": "The URL to the assignee in the PagerDuty Web application",
+            "format": "url"
+          }
+        },
+        "required": [
+          "assignedAt",
+          "assigneeID",
+          "assigneeName",
+          "assigneeAPIURL",
+          "assigneeAppURL"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "apiURL": {
+      "type": "string",
+      "description": "The URL to the incident in the PagerDuty API",
+      "format": "url"
+    },
+    "appURL": {
+      "type": "string",
+      "description": "The URL to the incident in the PagerDuty Web application",
+      "format": "url"
+    },
+    "service": {
+      "type": "string",
+      "description": "The affected service's unique identifier"
+    },
+    "serviceName": {
+      "type": "string",
+      "description": "The full name of the affected service"
+    },
+    "serviceDescription": {
+      "type": "string",
+      "description": "A description of the affected service"
+    },
+    "serviceAPIURL": {
+      "type": "string",
+      "description": "The URL to the affected service in the PagerDuty API",
+      "format": "url"
+    },
+    "serviceAppURL": {
+      "type": "string",
+      "description": "The URL to the affected service in the PagerDuty Web application",
+      "format": "url"
+    }
+  },
+  "required": [
+    "id",
+    "incidentNumber",
+    "title",
+    "urgency",
+    "triggeredAt",
+    "apiURL",
+    "appURL",
+    "service",
+    "serviceName",
+    "serviceDescription",
+    "serviceAPIURL",
+    "serviceAppURL"
+  ],
+  "additionalProperties": false
+}
