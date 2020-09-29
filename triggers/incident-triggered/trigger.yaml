@@ -19,7 +19,7 @@ examples:
 - summary: Run a workflow when a PagerDuty incident is triggered
   content:
     apiVersion: v1
-    kind: workflow
+    kind: Workflow
     parameters:
       id:
         description: The incident's unique ID
