@@ -20,39 +20,3 @@ This step expects the following fields in the `spec` section of a workflow step 
 | Name        | Data type | Description                                     |
 |-------------|-----------|-------------------------------------------------|
 | `dedup_key` | String    | The de-duplication key for the referenced event |
-
-## Usage
-
-```yaml
-parameters:
-  hostname:
-    description: "The hostname of the affected host"
-
-steps:
-- name: pagerduty-event
-  image: relaysh/pagerduty-step-event-send
-  spec:
-    connection: !Connection { type: pagerduty, name: my-project }
-    type: trigger
-    summary: !Fn.concat
-    - "Host "
-    - !Parameter hostname
-    - " is down"
-    source: !Parameter hostname
-    severity: critical
-    dedup_key: !Fn.concat ["host-down-", !Parameter hostname]
-- name: acknowledge-event
-  image: relaysh/pagerduty-step-event-send
-  dependsOn: pagerduty-event
-  spec:
-    connection: !Connection { type: pagerduty, name: my-project }
-    type: acknowledge
-    dedup_key: !Fn.concat ["host-down-", !Parameter hostname]
-- name: resolve-event
-  image: relaysh/pagerduty-step-event-send
-  dependsOn: acknowledge-event
-  spec:
-    connection: !Connection { type: pagerduty, name: my-project }
-    type: resolve
-    dedup_key: !Fn.concat ["host-down-", !Parameter hostname]
-```

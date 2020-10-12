@@ -17,21 +17,3 @@ This step expects the following fields in the `spec` section of a workflow step 
 | Name | Data type | Description                |
 |------|-----------|----------------------------|
 | `id` | String    | The id of the change event |
-
-## Usage
-
-```yaml
-parameters:
-  summary:
-    description: "The description of the change"
-  source:
-    description: "The source of the change"
-
-steps:
-- name: pagerduty-change-event
-  image: relaysh/pagerduty-step-change-event-send
-  spec:
-    connection: !Connection { type: pagerduty, name: my-project }
-    summary: !Parameter summary
-    source: !Parameter source
-```

@@ -21,15 +21,3 @@ This step expects the following fields in the `spec` section of a workflow step 
 | `timeZone`    | String    | The user's preferred time zone                            |
 | `apiURL`      | String    | The URL to the user record in the PagerDuty API           |
 | `appURL`      | String    | The URL to the user record in the PagerDuty web interface |
-
-
-## Usage
-
-```yaml
-steps:
-- name: pagerduty-user
-  image: relaysh/pagerduty-step-user-get-by-id
-  spec:
-    connection: !Connection [pagerduty, relay-pagerduty-service-integration]
-    userID: !Parameter userID
-```
