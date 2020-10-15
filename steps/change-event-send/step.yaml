@@ -18,3 +18,15 @@ build:
 
 publish:
   repository: relaysh/pagerduty-step-change-event-send
+
+examples:
+- summary: Send change event to PagerDuty
+  content:
+    apiVersion: v1
+    kind: Step
+    name: pagerduty-change-event
+    image: relaysh/pagerduty-step-change-event-send
+    spec:
+      connection: !Connection { type: pagerduty, name: my-pagerduty-account }
+      summary: !Parameter summary
+      source: !Parameter source

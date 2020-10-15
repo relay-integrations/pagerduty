@@ -21,3 +21,14 @@ schemas:
   outputs:
     source: file
     file: outputs.schema.json
+
+examples:
+- summary: Get PagerDuty user by ID
+  content:
+    apiVersion: v1
+    kind: Step
+    name: pagerduty-user
+    image: relaysh/pagerduty-step-user-get-by-id
+    spec:
+      connection: !Connection {pagerduty, my-pagerduty-account}
+      userID: !Parameter userID

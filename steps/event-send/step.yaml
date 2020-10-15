@@ -46,3 +46,43 @@ schemas:
       dedup_key:
         type: string
         description: The deduplication key for the referenced event
+
+examples:
+- summary: Send new event to PagerDuty
+  content:
+    apiVersion: v1
+    kind: Step
+    name: pagerduty-event
+    image: relaysh/pagerduty-step-event-send
+    spec:
+      connection: !Connection { type: pagerduty, name: my-pagerduty-account }
+      type: trigger
+      summary: !Fn.concat
+      - "Host "
+      - !Parameter hostname
+      - " is down"
+      source: !Parameter hostname
+      severity: critical
+      dedup_key: !Fn.concat ["host-down-", !Parameter hostname]
+- summary: Acknowledge an incident in PagerDuty
+  content: 
+    apiVersion: v1
+    kind: Step
+    name: acknowledge-event
+    image: relaysh/pagerduty-step-event-send
+    dependsOn: pagerduty-event
+    spec:
+      connection: !Connection { type: pagerduty, name: my-pagerduty-account }
+      type: acknowledge
+      dedup_key: !Fn.concat ["host-down-", !Parameter hostname]
+- summary: Resolve an incident in PagerDuty
+  content:
+    apiVersion: v1
+    kind: Step
+    name: resolve-event
+    image: relaysh/pagerduty-step-event-send
+    dependsOn: acknowledge-event
+    spec:
+      connection: !Connection { type: pagerduty, name: my-pagerduty-account }
+      type: resolve
+      dedup_key: !Fn.concat ["host-down-", !Parameter hostname]
