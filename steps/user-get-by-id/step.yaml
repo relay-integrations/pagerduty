@@ -30,5 +30,5 @@ examples:
     name: pagerduty-user
     image: relaysh/pagerduty-step-user-get-by-id
     spec:
-      connection: !Connection [pagerduty, relay-pagerduty-service-integration]
+      connection: !Connection [pagerduty, my-pagerduty-account]
       userID: !Parameter userID
