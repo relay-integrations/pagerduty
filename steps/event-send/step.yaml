@@ -83,6 +83,6 @@ examples:
     image: relaysh/pagerduty-step-event-send
     dependsOn: acknowledge-event
     spec:
-      connection: !Connection { type: pagerduty, name: my-project }
+      connection: !Connection { type: pagerduty, name: my-pagerduty-account }
       type: resolve
       dedup_key: !Fn.concat ["host-down-", !Parameter hostname]
