@@ -42,7 +42,7 @@ examples:
           serviceName: !Data serviceName
 - summary: When a PagerDuty incident is triggered
   content:
-    apiVersion: 1
+    apiVersion: v1
     kind: Trigger
     name: pagerduty-incident
     source:
