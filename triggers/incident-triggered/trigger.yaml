@@ -48,12 +48,12 @@ examples:
     source:
       type: webhook
       image: relaysh/pagerduty-trigger-incident-triggered
-      binding:
-        parameters:
-          id: !Data id
-          title: !Data title
-          urgency: !Data urgency
-          serviceName: !Data serviceName
+    binding:
+      parameters:
+        id: !Data id
+        title: !Data title
+        urgency: !Data urgency
+        serviceName: !Data serviceName
 
 build:
   apiVersion: build/v1
