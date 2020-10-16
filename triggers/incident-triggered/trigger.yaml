@@ -40,6 +40,20 @@ examples:
           title: !Data title
           urgency: !Data urgency
           serviceName: !Data serviceName
+- summary: When a PagerDuty incident is triggered
+  content:
+    apiVersion: v1
+    kind: Trigger
+    name: pagerduty-incident
+    source:
+      type: webhook
+      image: relaysh/pagerduty-trigger-incident-triggered
+    binding:
+      parameters:
+        id: !Data id
+        title: !Data title
+        urgency: !Data urgency
+        serviceName: !Data serviceName
 
 build:
   apiVersion: build/v1
