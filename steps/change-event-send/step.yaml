@@ -2,7 +2,7 @@ apiVersion: integration/v1
 kind: Step
 name: change-event-send
 version: 1
-summary: PagerDuty Change Event Send Step
+summary: Send PagerDuty change event
 
 description: |
   This step sends change events to PagerDuty
