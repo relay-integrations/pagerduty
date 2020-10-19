@@ -2,7 +2,7 @@ apiVersion: integration/v1
 kind: Step
 name: user-get-by-id
 version: 1
-summary: PagerDuty User Get By ID Step
+summary: Get PagerDuty user by ID
 
 description: |
   This step gets user details from PagerDuty by their PagerDuty ID
