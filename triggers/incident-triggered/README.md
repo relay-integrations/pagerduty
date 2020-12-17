@@ -11,5 +11,3 @@ This trigger fires when a PagerDuty incident is triggered for the first time.
 - Copy the webhook URL from your Relay workflow
 - Paste it into the "URL:" field in PagerDuty
 - Click "Save"
-
-![Configure Pagerduty extension](../../media/pagerduty-configuration.gif) 

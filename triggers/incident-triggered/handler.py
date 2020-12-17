@@ -2,6 +2,7 @@ from relay_sdk import Interface, WebhookServer
 from quart import Quart, request, jsonify, make_response
 
 import logging
+import json
 
 relay = Interface()
 app = Quart('incident-triggered')
@@ -15,6 +16,8 @@ async def handler():
         return {'message': 'not a valid PagerDuty event'}, 400, {}
 
     payload = await request.get_json(force=True)
+    logging.info("Received the following webhook payload: \n%s", json.dumps(payload, indent=4))
+
     for message in payload.get('messages', []):
         if message['event'] != 'incident.trigger':
             continue
