@@ -4,8 +4,7 @@ name: change-event-send
 version: 1
 summary: Send PagerDuty change event
 
-description: |
-  This step sends change events to PagerDuty
+description: Sends change events to PagerDuty.
 
 schemas:
   spec:

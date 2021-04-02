@@ -4,8 +4,7 @@ name: user-get-by-id
 version: 1
 summary: Get PagerDuty user by ID
 
-description: |
-  This step gets user details from PagerDuty by their PagerDuty ID
+description: Gets user details from PagerDuty by their PagerDuty ID.
 
 build:
   apiVersion: build/v1

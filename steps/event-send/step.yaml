@@ -4,8 +4,7 @@ name: event-send
 version: 1
 summary: Send PagerDuty event
 
-description: |
-  This step sends events to PagerDuty
+description: Sends events to PagerDuty.
 
 build:
   apiVersion: build/v1
