@@ -30,6 +30,7 @@ async def handler():
             'title': incident['title'],
             'urgency': incident['urgency'],
             'triggeredAt': incident['created_at'],
+            'details': message['log_entries'][0]['channel']['details'],
             'assignments': [{
                 'assignedAt': assignment['at'],
                 'assigneeID': assignment['assignee']['id'],
