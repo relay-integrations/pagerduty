@@ -15,9 +15,10 @@ operations.
 
 ## Triggers
 
-| Name                                               | Description                                                                |
-|----------------------------------------------------|----------------------------------------------------------------------------|
-| [incident-triggered](/triggers/incident-triggered) | When a new incident is created in PagerDuty                                |
+| Name                                                         | Description                                             |
+|--------------------------------------------------------------|---------------------------------------------------------|
+| [incident-triggered](/triggers/incident-triggered)           | When a new incident is created in PagerDuty             |
+| [incident-event-received](/triggers/incident-event-received) | When a new incident is created or resolved in PagerDuty |
 
 ## Contributing
 

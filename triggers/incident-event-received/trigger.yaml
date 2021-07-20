@@ -1,0 +1,53 @@
+apiVersion: integration/v1
+kind: Trigger
+name: incident-event-received
+version: 1
+summary: PagerDuty incident event received
+description: |
+  This trigger fires when a PagerDuty incident is triggered or resolved.
+
+responders:
+- webhook
+
+schemas:
+  spec: {}
+  event:
+    source: file
+    file: event.schema.json
+
+examples:
+- summary: Run a workflow when a PagerDuty incident is resolved
+  content:
+    apiVersion: v1
+    kind: Workflow
+    parameters:
+      id:
+        description: The incident's unique ID
+      eventType:
+        description: The incident event's type
+      title:
+        description: A brief summary of the incident
+    triggers:
+    - name: pagerduty-incident-resolved
+      source:
+        type: webhook
+        image: relaysh/pagerduty-trigger-incident-event-received
+      binding:
+        parameters:
+          id: ${event.id}
+          eventType: ${event.eventType}
+          title: ${event.title}
+          urgency: ${event.urgency}
+    steps:
+    - name: notify-resolved
+      image: relaysh/stdlib-step-echo
+      spec:
+        message: Resolved ${parameters.title}, id ${parameters.id}
+      when: ${parameters.eventType == 'incident.resolve'}
+
+build:
+  apiVersion: build/v1
+  kind: Docker
+
+publish:
+  repository: relaysh/pagerduty-trigger-incident-event-received
